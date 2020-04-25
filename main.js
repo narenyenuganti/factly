@@ -61,21 +61,23 @@ function searchArticle(query, sortType, blacklisted = "", maxArticles = maxNumAr
 }
 
 async function reverseSearch(query) {
-    query = "Corona Virus San Jose"
+    // query = "Corona Virus San Jose"
+    window.alert(query)
     var articles = await searchArticle(query, "relevancy", maxArticles = 1)
-
+    
     //format url author and title for user to read
     //if url is inside blacklist alert user
     
     var curUrl = articles[0].url;
 
-    const regex = 'https:\/\/www.(.*\.com)'; 
-    const domain = curUrl.match(regex)[1];
+    // const regex = 'https:\/\/www.(.*\.com)'; 
+    // const domain = curUrl.match(regex)[1];
 
-    if (BLACKLIST.includes(domain)) {
-        console.log("ALERT")
-    }
+    // if (BLACKLIST.includes(domain)) {
+    //     console.log("ALERT")
+    // }
 
+    window.alert(curUrl)
     chrome.tabs.create({url: curUrl});
     return articles;
 }
