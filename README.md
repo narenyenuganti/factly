@@ -1,5 +1,5 @@
 # factly
-Sid Bansal, Rohan Hajela, Naren Yenuganti, Andy Zhao
+Andy Zhao, Naren Yenuganti, Rohan Hajela, Sid Bansal
 
 
 Factly discourages the spread of misinformation, validate sources through various tools.

@@ -1,0 +1,17 @@
+{
+  "name": "Factly",
+  "version": "1.0",
+  "description": "Build an Extension!",
+  "permissions": ["activeTab", "declarativeContent", "storage", "contextMenus", "tabs"],
+  "background": {"page": "background.html"},
+  "page_action": {
+    "default_popup": "action.htm",
+    "default_icon": {
+        "32": "assets/factly_logo.png"
+    }
+  },
+  "icons": {
+    "32": "assets/factly_logo.png"
+  },
+  "manifest_version": 2
+}
