@@ -2,6 +2,7 @@
   "name": "Factly",
   "version": "1.0",
   "description": "Build an Extension!",
+  "web_accessible_resources": [ "node_modules/*"],
   "permissions": ["activeTab", "declarativeContent", "storage", "contextMenus", "tabs"],
   "background": {"page": "background.html"},
   "page_action": {

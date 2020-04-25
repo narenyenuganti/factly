@@ -90,7 +90,8 @@ function openURL(url, trustworthy){
 
 async function main() {
     var articles = await reverseSearch("coronavirus rate in San Jose California")
-    // console.log(articles)
+    console.log(articles)
 }
 
 main()
+// exports.reverseSearch = reverseSearch
