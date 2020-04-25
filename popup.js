@@ -4,9 +4,11 @@
 
 'use strict';
 
-let firstButton = document.getElementById('first');
-let secondButton = document.getElementById('second');
-let thirdButton = document.getElementById('third');
+let countyCount = document.getElementById('county');
+let stateCount = document.getElementById('state');
+let nationalCount = document.getElementById('national');
+let globalCount = document.getElementById('global');
+let searchBar = document.getElementById('search');
 
 chrome.storage.sync.get('color', function(data) {
   firstButton.style.backgroundColor = data.color;
@@ -14,11 +16,11 @@ chrome.storage.sync.get('color', function(data) {
 });
 
 
-firstButton.onclick = function(element) {
+countyCount.onclick = function(element) {
   let color = element.target.value;
   chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
     chrome.tabs.executeScript(
         tabs[0].id,
-        {code: 'window.alert("first fact fake!!");'});
+        {code: 'window.alert("There have been ' + Math.floor(Math.random()*10) + ' new cases in Alameda County");'});
   });
 };
