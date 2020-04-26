@@ -2,17 +2,19 @@ reverseGateway = async function(query){
     reverseSearch(query.selectionText)
   };
 
+
+
 chrome.contextMenus.create({
     title: "Lookup Source",
     contexts:["selection"],
-    onclick: getdb
+    onclick: reverseGateway
   });
 
-// chrome.contextMenus.create({
-//   title: "Copy link to Clipboard",
-//   contexts: ["selection"],
-//   onclick: copyHyperlink
-// });
+chrome.contextMenus.create({
+  title: "Copy link to Clipboard",
+  contexts: ["selection"],
+  onclick: copyHyperlink
+});
 
 const NewsAPI = require('newsapi');
 const newsapi = new NewsAPI('6a022b8162534fdaa0da0d6902608349');
@@ -121,6 +123,20 @@ async function reverseSearch(query) {
     // chrome.tabs.create({url: curUrl});
     return articles;
 }
+
+async function copyHyperlink(query) {
+  const link = document.URL;
+  const el = document.createElement('textarea');  // Create a <textarea> element
+  const finalString = query + " - [SOURCE: " + link + "]"
+  el.value = finalString;                                 // Set its value to the string that you want copied
+  el.setAttribute('readonly', '');                // Make it readonly to be tamper-proof
+  el.style.position = 'absolute';
+  el.style.left = '-9999px';                      // Move outside the screen to make it invisible
+  document.body.appendChild(el);                  // Append the <textarea> element to the HTML document
+  el.select();                                    // Select the <textarea> content
+  document.execCommand('copy');                   // Copy - only works as a result of a user action (e.g. click events)
+  document.body.removeChild(el);                  // Remove the <textarea> element
+};
 
 function chatbotSearch(query) {
 

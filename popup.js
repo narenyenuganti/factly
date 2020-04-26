@@ -21,8 +21,6 @@ function initializeNovelCovid() {
 
 
 
-
-
 // Imports the Google Cloud client library.
 const { LanguageServiceClient } = require("@google-cloud/language");
 const projectId = "factly-275323";
