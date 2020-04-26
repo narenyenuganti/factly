@@ -2,16 +2,14 @@ reverseGateway = async function(query){
     reverseSearch(query.selectionText)
   };
 
-
-
 chrome.contextMenus.create({
-    title: "Lookup Source",
-    contexts:["selection"],
-    onclick: reverseGateway
+  title: "Lookup Source",
+  contexts:["selection"],
+  onclick: reverseGateway
   });
 
 chrome.contextMenus.create({
-  title: "Copy link to Clipboard",
+  title: "Copy Link With Source",
   contexts: ["selection"],
   onclick: copyHyperlink
 });
@@ -21,32 +19,30 @@ const newsapi = new NewsAPI('6a022b8162534fdaa0da0d6902608349');
 
 const maxNumArticles = 3;
 
-const Firestore = require('@google-cloud/firestore');
-console.log('currently destroying google"s servers....mining crypto done!!')
+// const Firestore = require('@google-cloud/firestore');
+// console.log('currently destroying google"s servers....mining crypto done!!')
 
+// function getdb() {
+//   window.alert("Inside")
+//   const db = new Firestore({
+//     projectId: 'seismic-kingdom-275320',
+//     keyFilename: './e37dfd7e6e3b.json',
+//   });
 
-
-function getdb() {
-  window.alert("Inside")
-  const db = new Firestore({
-    projectId: 'seismic-kingdom-275320',
-    keyFilename: './e37dfd7e6e3b.json',
-  });
-
-  window.alert("Instantiated")
-  db.collection('sources').get()
-  .then((snapshot) => {
-    snapshot.forEach((doc) => {
-      console.log(doc.id, '=>', doc.data());
-      window.alert(doc.id, '=>', doc.data())
-    });
-  })
-  .catch((err) => {
-    console.log('Error getting documents', err);
-    window.alert('Error getting documents', err);
-  });
-  window.alert("After get")
-}
+//   window.alert("Instantiated")
+//   db.collection('sources').get()
+//   .then((snapshot) => {
+//     snapshot.forEach((doc) => {
+//       console.log(doc.id, '=>', doc.data());
+//       window.alert(doc.id, '=>', doc.data())
+//     });
+//   })
+//   .catch((err) => {
+//     console.log('Error getting documents', err);
+//     window.alert('Error getting documents', err);
+//   });
+//   window.alert("After get")
+// }
   
 // let docRef = db.collection('sources').doc('credibility');
 
@@ -118,16 +114,37 @@ async function reverseSearch(query) {
     // if (BLACKLIST.includes(domain)) {
     //     console.log("ALERT")
     // }
+    if (curUrl.split("/")[2].includes("www")) {
+      var domain = curUrl.split("/")[2].substring(4);
+    } else {
+      var domain = curUrl.split("/")[2];
+    }
+  
+    chrome.tabs.create({url: curUrl});
+    openURL(curUrl, !BLACKLIST.includes(domain));
 
-    // window.alert(curUrl)
-    // chrome.tabs.create({url: curUrl});
     return articles;
 }
 
+function openURL(url, trustworthy) {
+  if (!trustworthy) {
+    windows.alert(
+      "CAUTION: This source is known to spread misinformation"
+    );
+  }
+}
+
 async function copyHyperlink(query) {
-  const link = document.URL;
+ 
+  // var text = document.createElement("textarea");
+  // text.innerHTML = window.location.href;
+  // Copied = text.createTextRange();
+  // Copied.execCommand("Copy");
+
+  const link = window.location.href;
   const el = document.createElement('textarea');  // Create a <textarea> element
-  const finalString = query + " - [SOURCE: " + link + "]"
+  // const finalString = '"' + query.selectionText + '"' + " - [FACTLY SOURCE: " + link + "]"
+  const finalString = "There have been around 70 confirmed COVID-19 cases in the US so far, most of which were among repatriated passengers from the Diamond Princess cruise ship. [FACTLY SOURCE: https://www.businessinsider.com/four-us-coronavirus-cases-linked-to-community-spread-not-travel-2020-2]"
   el.value = finalString;                                 // Set its value to the string that you want copied
   el.setAttribute('readonly', '');                // Make it readonly to be tamper-proof
   el.style.position = 'absolute';
@@ -146,19 +163,4 @@ function chatbotSearch(query) {
 
     return articles
 }
-
-function openURL(url, trustworthy){
-  if (!trustworthy) {
-    alert("CAUTION: The selected phrase is linked to a website that is known to produce misinformation.")
-  }
-  chrome.tabs.create({url});
-};
-
-
-// async function main() {
-//     var articles = await reverseSearch("coronavirus rate in San Jose California")
-//     console.log(articles)
-// }
-
-// main()
     
