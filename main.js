@@ -9,7 +9,7 @@ chrome.contextMenus.create({
   });
 
 chrome.contextMenus.create({
-  title: "Copy Link With Source",
+  title: "Post to Facebook",
   contexts: ["selection"],
   onclick: copyHyperlink
 });
