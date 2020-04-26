@@ -128,7 +128,7 @@ async function reverseSearch(query) {
 
 function openURL(url, trustworthy) {
   if (!trustworthy) {
-    windows.alert(
+    window.alert(
       "CAUTION: This source is known to spread misinformation"
     );
   }
