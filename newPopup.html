@@ -1,50 +1,62 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8" />
-    <title>NewFactly</title>
-    <link rel="stylesheet" href="newPopup.css" />
+    <title>Factly</title>
+    <link rel="stylesheet" href="newPopup.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <script src="popup.js"></script>
   </head>
   <body>
     <form class="form-style-9">
       <ul>
-        <li>
-          <button class="button-secondary pure-button" name="county">County Updates</button>
-          <button class="button-secondary pure-button" name="state">State Updates</button>
-          <button class="button-secondary pure-button" name="national">National Updates</button>
-          <button class="button-secondary pure-button" name="global">Global Updates</button>
+        <a href="default.asp">
+          <img src="assets/factly_logo.png" style="width:42px;height:42px;border:0">
+        </a>
+        <h1>Welcome to Factly!</h1>
+        <h2>Coronavirus Updates</h2>
+        <li class = "buttons"> 
+          <button class="button-secondary" name="county">County Updates</button>
+          <button class="button-secondary" name="state">State Updates</button>
+          <button class="button-secondary" name="national">National Updates</button>
+          <button class="button-secondary" name="global">Global Updates</button>
         </li>
-        <li>
-          <input
-            type="text"
-            name="reverse"
-            class="field-style field-split align-left"
-            placeholder="ReverseSearch Text"
-          />
+    </form>
+    <form class="form-style-9">
+      <h2>Reverse Search</h2>
+      <li class = "buttons">
+        <input
+          type="text"
+          name="reverse"
+          class="field-style field-split align-left"/>
+          <button class= "button-submit">Submit</button>
+      </li>
+      <form>
+        <li class = "buttons">
+          <button class="button-success"> 234&nbsp; <i class="fa fa-thumbs-up"></i></button>
+          <button class="button-error"> 189&nbsp; <i class="fa fa-thumbs-down"></i></button>
         </li>
-        <li>
+      </form>
+    </form>
+    <form class="form-style-9">
+        <h2>ChatBot</h2>
+        <li class = "buttons">
           <input
             type="text"
             id="chatbotinput"
-            class="field-style field-full align-none"
+            class="field-style field-split align-left"
             placeholder="TALK TO CHATBOT HERE"
           >
-          <!-- <input type="submit" value="Send Message"/> -->
-          <button id="submit_button" >SUBMIT</button>
+          <button class= "button-submit">Submit</button>
         </li>
         <li>
           <textarea
             name="chatbotoutput"
             class="field-style"
-            placeholder="CHATBOT TALKS HERE"
+            placeholder="CHATBOT WILL UPDATE YOU HERE!"
+            readonly
           ></textarea>
         </li>
-        <li>
-          <button class="button-success pure-button">0 Upvote</button>
-          <button class="button-error pure-button">1 Downvote</button>
-        </li>
-      </ul>
     </form>
   </body>
 </html>

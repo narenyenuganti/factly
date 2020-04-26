@@ -1,14 +1,26 @@
 body {
-  min-width: 400px;
+  min-width: 500px;
+  font-family: "Manrope", sans-serif;
 }
-
-.form-style-9 {
-  max-width: 450px;
-  background: #fafafa;
-  margin: 50px auto;
-  box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
-  border-radius: 10px;
-  border: 6px solid #305a72;
+html {
+  padding: 5px 5px 5px 5px;
+}
+textarea {
+  resize: none;
+}
+h1 {
+  margin-left: 0px;
+  margin-bottom: 15px;
+}
+h2 {
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+.smaller {
+    line-height: 1%;
+}
+a {
+  float: right;
 }
 .form-style-9 ul {
   padding: 0;
@@ -17,7 +29,7 @@ body {
 }
 .form-style-9 ul li {
   display: block;
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
   min-height: 35px;
 }
 .form-style-9 ul li .field-style {
@@ -45,9 +57,6 @@ body {
 .form-style-9 ul li input.align-left {
   float: left;
 }
-.form-style-9 ul li input.align-right {
-  float: right;
-}
 .form-style-9 ul li textarea {
   width: 100%;
   height: 100px;
@@ -71,27 +80,50 @@ body {
   background: linear-gradient(to bottom, #2d77a2 5%, #337da8 100%);
   background-color: #28739e;
 }
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 0px;
+}
 .button-success,
 .button-error,
 .button-warning,
+.button-submit,
 .button-secondary {
   color: white;
   border-radius: 4px;
+  margin-right: 20px;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
-
+.button-success,
+.button-submit,
+.button-error,
+.button-warning,
+.button-secondary:not(:first) {
+  margin-left: 20px;
+}
 .button-success {
-  background: rgb(28, 184, 65); /* this is a green */
+  background: rgb(28, 184, 65);
 }
-
 .button-error {
-  background: rgb(202, 60, 60); /* this is a maroon */
+  background: rgb(202, 60, 60);
 }
-
 .button-warning {
-  background: rgb(223, 117, 20); /* this is an orange */
+  background: rgb(223, 117, 20);
 }
-
 .button-secondary {
-  background: #28739e; /* this is a light blue */
+  background: #28739e;
+}
+.button-submit {
+  background: rgb(88, 85, 85);
+  margin-bottom: 5px;
+  margin-top: 5px;
+  margin-left: 10px;
+}
+.submit-button {
+  color: white;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  background: rgb(65, 61, 58);
+  justify-content: center;
 }
