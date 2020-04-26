@@ -143,8 +143,8 @@ async function copyHyperlink(query) {
 
   const link = window.location.href;
   const el = document.createElement('textarea');  // Create a <textarea> element
-  // const finalString = '"' + query.selectionText + '"' + " - [FACTLY SOURCE: " + link + "]"
-  const finalString = "There have been around 70 confirmed COVID-19 cases in the US so far, most of which were among repatriated passengers from the Diamond Princess cruise ship. [FACTLY SOURCE: https://www.businessinsider.com/four-us-coronavirus-cases-linked-to-community-spread-not-travel-2020-2]"
+  const firstString = '"' + query.selectionText + '"'
+  const finalString = firstString + " - [FACTLY SOURCE: https://www.businessinsider.com/four-us-coronavirus-cases-linked-to-community-spread-not-travel-2020-2]"
   el.value = finalString;                                 // Set its value to the string that you want copied
   el.setAttribute('readonly', '');                // Make it readonly to be tamper-proof
   el.style.position = 'absolute';
