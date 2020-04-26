@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     link.addEventListener('click', function(e) {
         // var track = initializeNovelCovid()
         // chatbotHandler(inputtext.value, track);
-        output(inputtext.value);
+        output();
         e.preventDefault()
     });
 });
@@ -18,8 +18,20 @@ var person = {
     yo: "Wassup",
 };
 
-function output(text) {
-    document.getElementById('chatbotoutput').innerHTML = text;
+var count = 0;
+function output() {
+  if (count == 0) {
+    document.getElementById('chatbotoutput').innerHTML = "Santa Clara\nCases:  2040\nDeaths:  99\nRecovered:  0";
+  } else if (count == 1) {
+    document.getElementById('chatbotoutput').innerHTML = "New York\nTotal Cases:  288313";
+  } else if (count == 2) {
+    document.getElementById('chatbotoutput').innerHTML = "USA\nCases:  960896\nNew Cases:  245";
+  } else if (count == 3) {
+    document.getElementById('chatbotoutput').innerHTML = "San Francisco\nDeath Rate: 1.62%";
+
+  }
+  count++;
+  
 }
 
 function initializeNovelCovid() {

@@ -6,13 +6,16 @@ const track = new NovelCovid();
 // Imports the Google Cloud client library.
 const { LanguageServiceClient } = require("@google-cloud/language");
 const projectId = "factly-275323";
-const client_email = "nlp-owner@factly-275323.iam.gserviceaccount.com";
-const private_key = "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCkHWVDaIAu0PDF\nLWwVIfoBjAt9LH90JAzI6HNVYj2SHEUAI4EibGwfw8s96s7CoKDhlXH0Cq/FGdzg\ngdaDNsmCg9lOTY6T/v5URYUnj5YlYJPgYqoXRCuwJ/0hUEKfQGUySeXE4TheGAuZ\nKDD4zsLIr6SSN0voGYUVYojr0LLb5tX2+aFmdNWMocY+b/ehuKPwqwWe05LHX/I5\na/LSAJxZfVMbQWd+xoj/5mxXEoLOi0/+Zxmr8vZAYBe6ueHNrmD/P2suvivwWDUr\nY9wKzGtCogS0idqSUzStrDHCvfX0XN7Get1ZKqsND5CxuOMOB3RZ+2jSeAzy5Klm\nJNzczh6hAgMBAAECggEAOXi72g/R99MexgZCl+H2oa0P5u160sq/GWph3VBSfITe\n2w4T7mCmurb/yTad4oWK4YTKy6okZLNKaOq/GuNITSbsJiI94HEHUq6n0zNS4tL/\n5i/XHd+3JvDSEeT/97H+3k4Ho1s1uKnWAfQTtkX963aq/LNVpzmso9EGXwKOaDhN\nuD2mzHFQrm5g5aVgLjCkbxlcpXI/9Pl2ExK12Ew6evcvNP0Vn0c3bJZs3lE8BHuZ\nrQYixh5QQD8S2N8R9dsPFriNJBafxXFM4oBVFhi4yo7A7FvtCUGk2+xLv+bJtrxs\nyIFKoDiX+uY0Jpyb5sv448DNghuOSPl8qdMRc8NH2wKBgQDfKN8bk2tzSYcMwiVw\n1lKNxtLjuIhZd87QjbhIWlqosK9niW+5UWF5Amf1rVKKIZ9wItm8oegMuOD5mahn\nUESAdcsZzPCXlyqv2RZC9Rs13u1d09VqY6IgKPfp333Of0nQJjCQLutq9lLTI6oR\nXtM3zBlfoQ6BrQjbYUp5ASZSBwKBgQC8RB54kmPLdmW9djhV6NISQyUSsVEl4JTF\n3Rt0C3XjyNJEvHy0YXcrYGWC89vdasvqSo1ZVUdCW2TTXI+4gmkaPFkE2ZC48JOE\n2BTcJWIRrOf8HPfoMlILA5htHngXpUhKnv7YgwGO96/UIMOGxa/uf56utvr87NZq\nZpdfAI1AFwKBgAT8LL+481WH9vRaAewbXYy9PEjJ/oHBI2WVROCY5B2QlNqDP3Os\nVbkWTKw4Sve6+IzQunx0QXLHTn9E53YnXOBhwT+6TEWWouV6u/yS7SCu8i5+ZO4T\ne7OsNp2K2IycW1HDCKKv6aJiDkeZLFtm+uDsNkTknCZZbzE3YyqA1BJRAoGAcO1v\nVaWBxNalGmtiSW3ZLGkoQLkp0s2Oj80cHZSOR277aY2iQ9S+1b8BxPYfqQXZgRTt\nCmvTzaLirMG119gp0Tnnr7gNTlHIOwQeJxspYy7TDHAX6Cje+4pRkQqYwJ486b3L\nYfXbJnW9+0EX56yG5kmY1nYdwT8TMkmNfMfo8ksCgYEAwxMsJxLax4ui0SShm9GZ\ngGtFRxTehdHNbmHIyN2Rpnzbe8BUYAL6zlMTE9PddLtkDsgrvHP13aERyPB96Aa2\nkASXFenOiTD57JXkEzuhZ2QfnWz9PDrI6RRKaMUuVcZw3C8GndNw8T1pSP4+k3eR\n/F97ufWsFFWvO3pYGcMKtKg=\n-----END PRIVATE KEY-----\n";
-const language = new LanguageServiceClient({
-  projectId,
-  client_email,
-  private_key,
-});
+// const key_file = "factly-275323-4ac6af08b025.json";
+const client_email = "nlp2-620@factly-275323.iam.gserviceaccount.com";
+const private_key = "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC29FoUY3KgCMR5\na3qbERVgDajmkqLqxS/HoadLt8BO33tcycMHSaG3JIt3c+l/7KLqmGHBZsvoqwHA\nsMjACbaYcRkYZenJ1CU/8vaxt6BXq1quEOQplr5Rsa6xfvBDdkBgqxLho5boycBm\n60XoGKCW8NgsIFIPhz1HPjcejS5dWn/Lmd29wEjYlxNIQpwu3M5vJ9mFJcEUsJ80\nBDZphk98RpKOhcreZwG1HJJ0418tZSCGkX6KguBiiHxAzgTsZcWq1e8GJcAGuH7+\nhq3vkPktSF5jwgScBhG78ZIqkX1uovPDJgAbXywQBuCYYUzBTNpOFSeo0aolHOhC\nraXOdtPhAgMBAAECggEAK1SE7xY8hBV/fuhLIeWyY8zoZy9sgWDRN50cE61B0QxR\n2cB5PcUdFVSE6XYc46zGSvxrDpSLj5/MqvfTm9PRGJqUoHgmniPt7I7dCWsdgRX2\nxIoAl675hTypTKVtPvUHOz3ZG3KUn66EsHthU55djlIdSJohBUd45mIgSM6UIAyT\n+YiX0aGK+WPMaPsEj47JF/MYpAv8NLddZraxAeA6Wjj8N2kAeJwfBlKNu54qkJXX\nrorDBKZGj0Z8gryegEtsahcD8PmpGgHsA+JfDlI0fDu6+mvReHXQdaNd/Fw0Xnir\njMYjQTmzR5xc6EIAt8tyiimDwlAYzSoFNNpxkPESyQKBgQDbL7WQ0WZG8oW6TuMV\ngnuI/M1cB4oP9XHT/13IK0OvErAzCMTh3OuVEKXFxh4DJQxfiIl3WWB26xxW6o3o\no1bwu8P0hv0wlNcVZB/yNyzFWq2UsQr8BvFa8vw03wHY+uqG/4oZWfsuJiBZhUYq\ngjSvarOvyOaVwivIxT9s8ZZnPQKBgQDVrsq9BjDH4oJL8JmU5cVRHJ5RNDPv2c66\neu9AwPLrUT78EeSi8uioLxrj1h4EFiDalV/WUM4LqQiL8BB5W7Rtxs+1RlIuBlHD\noGHJSoJSgmcT+zCOvfq/J/ZijYGYOCmiWgICuNTSdQKuatOrPiSwSsSNgigR3fF4\ntDwzDQKJdQKBgAnXv6CMNrqS43x1VG8/18pUB+jNEd8bl4v8mLqHbteq0CzKhQTb\nhdzAzaDu/6QGguK7X+jzI4jTkAc7Kzo6M4pF9EvD0BThajM0ttaKscD/DHJz7Nla\nenYqGTdKmGulAOklCo+O4d+1qJg8iuUXycPi18TaEbjB6nNuoCWFR8rFAoGBAI6x\nLomTvLd+NuxnOugHmABWUBKB/bzJghddSK/BKXaixqClgjyeYWcOLbK/pUOtUzsk\nTN9dDnsS4bYxFY81AgPco4+16eL6LVepniNBMk3O7u6U6xQnIW7NTOb6//OabZMQ\n8A7JRrVTlfrLM5ZC5VUkWKT2qbNktn+YPCsLIQqRAoGAY9I1oQri40phj3AAFCpo\nXWfMxDDo7rTQHXSnAXYarVLyrYBho6bm6XMuoomAaphiUKLm4k3T19Ywaw8mzVhn\nnJtEqvUHVbLDZI6zg9iUr4k6xNBJ6keXttiD60wwyrGaYF86sEAizW6ZkQNw6aGx\niV0U9QsdyiZJ5Yv9Spx+5vk=\n-----END PRIVATE KEY-----\n";
+const language = require('@google-cloud/language');
+// const language = new LanguageServiceClient({
+//   projectId,
+//   // key_file,
+//   client_email,
+//   private_key,
+// });
 
 
 var COUNTRIES = [];
@@ -29,6 +32,7 @@ function searchArticle(
   sortType,
   blacklisted = "",
   maxArticles = maxNumArticles //FIXME: ADD THIS TO API REQ
+  
 ) {
   return new Promise(function (resolve, reject) {
     newsapi.v2
@@ -108,7 +112,7 @@ async function searchCases(scope, loc) {
 }
 
 async function analyzeEntitiesOfText(text, language) {
-  const client = language;
+  const client = new language.LanguageServiceClient();
 
   // Prepares a document, representing the provided text
   const document = {
@@ -204,4 +208,4 @@ async function listEverything(scope) {
   }
 }
 
-chatbotHandler("Number of coronavirus cases in Santa Clara");
+chatbotHandler("How many people have corona in San Francisco");
