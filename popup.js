@@ -11,10 +11,9 @@ let globalCount = document.getElementById('global');
 let searchBar = document.getElementById('search');
 
 chrome.storage.sync.get('color', function(data) {
-  firstButton.style.backgroundColor = data.color;
-  firstButton.setAttribute('value', data.color);
+  countyCount.style.backgroundColor = data.color;
+  countyCount.setAttribute('value', data.color);
 });
-
 
 countyCount.onclick = function(element) {
   let color = element.target.value;

@@ -14,6 +14,21 @@ const newsapi = new NewsAPI('6a022b8162534fdaa0da0d6902608349');
 
 const maxNumArticles = 3;
 
+const Firestore = require('@google-cloud/firestore');
+
+const db = new Firestore({
+    projectId: 'seismic-kingdom-275320',
+    keyFilename: './e37dfd7e6e3b.json',
+});
+
+let docRef = db.collection('domains').doc('https://time.com/5826108/unemployment-us-economy-coronavirus/');
+  
+let setdomain = docRef.set({
+  upvotes: 1,
+  downvotes: 0 
+});
+
+
 // SOURCE: https://www.newsguardtech.com/coronavirus-misinformation-tracking-center/?fbclid=IwAR2FYJddK-F3zQEGFmdcLmdEnbrOn3C_f00nu8PdUBVPLi6xQcxL1IceSvQ
 var BLACKLIST = "BigLeaguePolitics.com, Brighteon.com, BuffaloChronicle.com, Collective-Evolution.com, DCClothesline.com, DCDirtyLaundry.com, DiamondandSilk.com, DoctorDavidFriedman.com, DrSergeGregoire.com, En-Volve.com, GNews.org, GreenMedInfo.com, HealingOracle.ch, HealthImpactNews.com, HealthNutNews.com, Herbs-Info.com, HolisticHealth.one, HomeNaturalCures.com, HumansAreFree.com, InfoWars.com, Intellihub.com, JimBakkerShow.com, JimHumble.co, Medicine-Today.net, Mercola.com, NaturalHealth365.com, NowTheEndBegins.com, NTDnews.com, OrganicConsumers.org, PrankMania.com, Prntly.com, RealFarmacy.com, RedState.com, RedStateWatcher.com, Reddit.com, RushLimbaugh.com, SonsOfLibertyMedia.com, SOTT.net, StopMandatoryVaccination.com, TechStartups.com, TheBL.com, TheDonald.win, TheEpochTimes.com, TheGatewayPundit.com, TheMindUnleashed.com, TheTruthAboutCancer.com, TierneyRealNewsNetwork.com, Vaxxter.com, WakingTimes.com, WND.com, WorldHealth.net, WorldNewsDailyReport.com, ZeroHedge.com, 4chan.org, 8ch.net, NaturalNews.com, Banned.news, Biased.news, Bioterrorism.news, CaliforniaCollapse.news, CDC.news, Censorship.news, Conspiracy.news, Cures.news, Depopulation.news, Disinfo.news, Eugenics.news, Extinction.news, FactCheck.news, Faked.news, Freedom.news, Health.news, Herbs.news, Honest.news, Infections.news, Journalism.news, MediaFactWatch.com, MedicalExtremism.com, Medicine.news, NaturalCures.news, NaturalNewsRadio.com, Naturopathy.news, NewsFakes.com, NewsTarget.com, NYTWatch.com, OpenBorders.news, Outbreak.news, Pandemic.news, Panic.news, PlantMedicine.news, PopulationControl.news, Propaganda.news, RealInvestigations.news, Remedies.news, Risk.news, ScienceClowns.com, ScienceFraud.news, Science.news, Scientific.news, Sheeple.news, SHTF.news, Superbugs.news, TechGiants.news, Technocrats.news, Twisted.news, Tyranny.news, Uprising.news, VaccineDamage.news, VaccineInjuryNews.com, Vaccines.news, WaPoop.news, WashingtonPosted.news, Now8News.com, Breaking13News.com";
 BLACKLIST = BLACKLIST.toLowerCase();

@@ -3,40 +3,41 @@
   <head>
     <meta charset="UTF-8">
     <title>Factly</title>
-    <!-- <link rel="stylesheet" href="libs/font-awesome.min.css" />
+    <link rel="stylesheet" href="libs/font-awesome.min.css" />
     <link rel="stylesheet" href="libs/hover-min.css" />
     <link rel="stylesheet" href="libs/reset.css" />
-    <link rel="stylesheet" href="action.css" /> -->
-    <link rel="stylesheet" href="libs/button.css" />
+    <link rel="stylesheet" href="action.css" />
+    <link rel="stylesheet" href="libs/buttons.css" />
     <script src="popup.js"></script>
-    <!-- <style>
-      button {
-        height: 100px;
-        width: 100px;
-        outline: none;
-      }
-      button {
-        height: 100px;
-        width: 100px;
-        outline: none;
-      }
-      button {
-        height: 100px;
-        width: 100px;
-        outline: none;
-      }
-    </style> -->
   </head>
   <body>
-    <h1>Hello Sid, make sure to stay informed!</h1>
-    <div class="topnav">
-      <button class="active" href="county">Local Updates</button>
-      <button href="state">State Updates</button>
-      <button href="national">National Updates</button>
-      <button href="global">Global Updates</button>
-      <input type="text" placeholder="Search here..." href="search">
+    <div id="container" class="container">
+
+      <div class="header">
+        <span class="logo"></span>
+        <span class="title" data-translate="PP_ExtName"></span>
+      
+        <button id="pauseSwitch" class="power"></button>
+      </div>
+
+      <div class="topnav">
+        <button class="active" href="county">Local Updates</button>
+        <button href="state">State Updates</button>
+        <button href="national">National Updates</button>
+        <button href="global">Global Updates</button>
+        <input type="text" placeholder="Search here..." href="search">
+      </div>
+
+      <div class="multimedia">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/OPHzIpERYFw" frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+      </div>
+
+      <div class="bottomnav">
+        <button class="good" href="upvote">Upvote</button>
+        <button class="bad" href="downvote">Downvote</button>
+      </div>
     </div>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/OPHzIpERYFw" frameborder="0"
-      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
   </body>
+  
 </html>
