@@ -7,18 +7,18 @@
     <script src="popup.js"></script>
   </head>
   <body>
-    <div class="form-style-9">
+    <form class="form-style-9">
       <ul>
         <li>
-          <button class="button-secondary pure-button">County Updates</button>
-          <button class="button-secondary pure-button">State Updates</button>
-          <button class="button-secondary pure-button">National Updates</button>
-          <button class="button-secondary pure-button">Global Updates</button>
+          <button class="button-secondary pure-button" name="county">County Updates</button>
+          <button class="button-secondary pure-button" name="state">State Updates</button>
+          <button class="button-secondary pure-button" name="national">National Updates</button>
+          <button class="button-secondary pure-button" name="global">Global Updates</button>
         </li>
         <li>
           <input
             type="text"
-            name="field3"
+            name="reverse"
             class="field-style field-split align-left"
             placeholder="ReverseSearch Text"
           />
@@ -26,15 +26,16 @@
         <li>
           <input
             type="text"
-            name="field3"
+            id="chatbotinput"
             class="field-style field-full align-none"
             placeholder="TALK TO CHATBOT HERE"
-          />
-          <input type="submit" value="Send Message" />
+          >
+          <!-- <input type="submit" value="Send Message"/> -->
+          <button id="submit_button" >SUBMIT</button>
         </li>
         <li>
           <textarea
-            name="field5"
+            name="chatbotoutput"
             class="field-style"
             placeholder="CHATBOT TALKS HERE"
           ></textarea>
@@ -44,6 +45,6 @@
           <button class="button-error pure-button">1 Downvote</button>
         </li>
       </ul>
-    </div>
+    </form>
   </body>
 </html>
