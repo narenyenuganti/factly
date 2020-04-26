@@ -1,4 +1,3 @@
-
 reverseGateway = async function(query){
     reverseSearch(query.selectionText)
   };
@@ -9,6 +8,12 @@ chrome.contextMenus.create({
     onclick: getdb
   });
 
+// chrome.contextMenus.create({
+//   title: "Copy link to Clipboard",
+//   contexts: ["selection"],
+//   onclick: copyHyperlink
+// });
+
 const NewsAPI = require('newsapi');
 const newsapi = new NewsAPI('6a022b8162534fdaa0da0d6902608349');
 
@@ -16,6 +21,8 @@ const maxNumArticles = 3;
 
 const Firestore = require('@google-cloud/firestore');
 console.log('currently destroying google"s servers....mining crypto done!!')
+
+
 
 function getdb() {
   window.alert("Inside")
