@@ -28,7 +28,6 @@ function output() {
     document.getElementById('chatbotoutput').innerHTML = "USA\nCases:  960896\nNew Cases:  245";
   } else if (count == 3) {
     document.getElementById('chatbotoutput').innerHTML = "San Francisco\nDeath Rate: 1.62%";
-
   }
   count++;
   
