@@ -17,7 +17,6 @@ const language = require('@google-cloud/language');
 //   private_key,
 // });
 
-
 var COUNTRIES = [];
 var STATES = [];
 var COUNTIES = [];
