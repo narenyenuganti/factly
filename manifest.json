@@ -2,10 +2,9 @@
   "name": "Factly",
   "version": "1.0",
   "description": "Combat misinformation!",
-  "web_accessible_resources": [ "node_modules/*"],
   "permissions": ["activeTab", "declarativeContent", "storage", "contextMenus", "tabs"],
   "background": {"page": "background.html"},
-  "page_action": {
+  "browser_action": {
     "default_popup": "popup.html",
     "default_icon": {
         "32": "assets/factly_logo.png"
